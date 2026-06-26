@@ -1,33 +1,23 @@
-// === DRAG SYSTEM BLOCK ===
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Block Blast</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-let selectedBlock = null;
-let offsetX = 0;
-let offsetY = 0;
+<h2>Mini Block Blast</h2>
 
-// ambil semua block
-document.querySelectorAll(".block").forEach(block => {
-  block.addEventListener("mousedown", (e) => {
-    selectedBlock = block;
+<div id="score">Score: 0</div>
 
-    offsetX = e.clientX - block.offsetLeft;
-    offsetY = e.clientY - block.offsetTop;
+<div id="board"></div>
 
-    block.style.cursor = "grabbing";
-  });
-});
+<h3>Pilih Block</h3>
+<div id="pieces"></div>
 
-// gerakkan block
-document.addEventListener("mousemove", (e) => {
-  if (!selectedBlock) return;
+<script src="script.js"></script>
 
-  selectedBlock.style.left = (e.clientX - offsetX) + "px";
-  selectedBlock.style.top = (e.clientY - offsetY) + "px";
-});
-
-// lepas block
-document.addEventListener("mouseup", () => {
-  if (selectedBlock) {
-    selectedBlock.style.cursor = "grab";
-    selectedBlock = null;
-  }
-});
+</body>
+</html>
