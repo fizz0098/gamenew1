@@ -8,16 +8,48 @@ const gameOverEl = document.getElementById("gameOver");
 let board = [];
 let score = 0;
 let selectedPiece = null;
-
-// Bentuk blok
 const blocks = [
+    // 1 kotak
     [[1]],
+
+    // 2 horizontal
     [[1,1]],
+
+    // 2 vertical
     [[1],[1]],
-    [[1,1],[1,1]],
+
+    // 3 horizontal
     [[1,1,1]],
+
+    // 3 vertical
     [[1],[1],[1]],
-    [[1,1,1],[0,1,0]]
+
+    // L kecil
+    [[1,0],
+     [1,1]],
+
+    // L terbalik
+    [[0,1],
+     [1,1]],
+
+    // T shape
+    [[1,1,1],
+     [0,1,0]],
+
+    // persegi 2x2
+    [[1,1],
+     [1,1]],
+
+    // garis 4
+    [[1,1,1,1]],
+
+    // L panjang
+    [[1,0,0],
+     [1,1,1]],
+
+    // zigzag
+    [[1,1,0],
+     [0,1,1]]
 ];
 
 // =====================
