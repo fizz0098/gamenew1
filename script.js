@@ -1,14 +1,33 @@
-const board = document.getElementById("board");
+// === DRAG SYSTEM BLOCK ===
 
-// Membuat papan 8x8
-for (let i = 0; i < 64; i++) {
-    const cell = document.createElement("div");
-    cell.className = "cell";
-    board.appendChild(cell);
-}
+let selectedBlock = null;
+let offsetX = 0;
+let offsetY = 0;
 
-const points = document.getElementById("points");
-points.textContent = 0;
-element.addEventListener("click", function () {
-  // gerakan block
+// ambil semua block
+document.querySelectorAll(".block").forEach(block => {
+  block.addEventListener("mousedown", (e) => {
+    selectedBlock = block;
+
+    offsetX = e.clientX - block.offsetLeft;
+    offsetY = e.clientY - block.offsetTop;
+
+    block.style.cursor = "grabbing";
+  });
+});
+
+// gerakkan block
+document.addEventListener("mousemove", (e) => {
+  if (!selectedBlock) return;
+
+  selectedBlock.style.left = (e.clientX - offsetX) + "px";
+  selectedBlock.style.top = (e.clientY - offsetY) + "px";
+});
+
+// lepas block
+document.addEventListener("mouseup", () => {
+  if (selectedBlock) {
+    selectedBlock.style.cursor = "grab";
+    selectedBlock = null;
+  }
 });
