@@ -35,8 +35,8 @@ h1 {
 }
 
 .cell {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     background: #00e676;
     border-radius: 3px;
     transition: 0.2s;
@@ -62,12 +62,14 @@ h1 {
 }
 
 .piece {
-     display: grid;
+    display: grid;
     gap: 2px;
-    padding: 8px;
+    padding: 6px;
     background: #444;
     border-radius: 10px;
-    cursor: grab;
+    cursor: pointer;
+    justify-content: center;
+    margin: 5px;
 }
 
 .piece:hover {
