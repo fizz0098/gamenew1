@@ -105,9 +105,24 @@ function createPieces() {
 
         const piece = document.createElement("div");
         piece.classList.add("piece");
-        piece.draggable = true;
 
-        piece.innerText = "Block";
+        // bikin tampilan shape
+        piece.style.gridTemplateColumns = `repeat(${shape[0].length}, 15px)`;
+
+        shape.forEach(row => {
+            row.forEach(cell => {
+                const cellDiv = document.createElement("div");
+                cellDiv.classList.add("piece-cell");
+
+                if (!cell) {
+                    cellDiv.style.visibility = "hidden";
+                }
+
+                piece.appendChild(cellDiv);
+            });
+        });
+
+        piece.draggable = true;
 
         piece.addEventListener("dragstart", () => {
             selectedPiece = shape;
@@ -116,7 +131,6 @@ function createPieces() {
         piecesEl.appendChild(piece);
     }
 }
-
 // =====================
 // CHECK VALID POSITION
 // =====================
