@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    background: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#game {
+    text-align: center;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+    background: #444;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 2px;
+}
+
+.cell {
+    background: #666;
+}
+
+#pieces {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.piece {
+    width: 60px;
+    height: 60px;
+    background: orange;
+    border-radius: 8px;
+}
