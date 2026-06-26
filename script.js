@@ -106,8 +106,7 @@ function createPieces() {
         const piece = document.createElement("div");
         piece.classList.add("piece");
 
-        // bikin tampilan shape
-        piece.style.gridTemplateColumns = `repeat(${shape[0].length}, 15px)`;
+        piece.style.gridTemplateColumns = `repeat(${shape[0].length}, 18px)`;
 
         shape.forEach(row => {
             row.forEach(cell => {
@@ -115,16 +114,14 @@ function createPieces() {
                 cellDiv.classList.add("piece-cell");
 
                 if (!cell) {
-                    cellDiv.style.visibility = "hidden";
+                    cellDiv.style.opacity = "0";
                 }
 
                 piece.appendChild(cellDiv);
             });
         });
 
-        piece.draggable = true;
-
-        piece.addEventListener("dragstart", () => {
+        piece.addEventListener("click", () => {
             selectedPiece = shape;
         });
 
