@@ -1,37 +1,37 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Block Blast</title>
-<link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Blast Clone</title>
 
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<h1>🧩 Block Blast</h1>
+    <h1>🎮 Block Blast Clone</h1>
 
-<div id="score">
-Skor : <span id="points">0</span>
-</div>
+    <!-- SCORE -->
+    <div class="info">
+        <div id="score">Score: 0</div>
+    </div>
 
-<div id="game">
+    <!-- GAME BOARD -->
+    <div id="board"></div>
 
-<div id="board"></div>
+    <!-- PIECES AREA -->
+    <h3>Pilih Block</h3>
+    <div id="pieces"></div>
 
-<div id="pieces">
+    <!-- GAME OVER -->
+    <div id="gameOver" class="hidden">
+        <h2>Game Over</h2>
+        <button onclick="location.reload()">Restart</button>
+    </div>
 
-<div class="piece square"></div>
-
-<div class="piece line"></div>
-
-<div class="piece lshape"></div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
+```
