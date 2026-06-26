@@ -1,28 +1,14 @@
-let selected = null;
-let offsetX = 0;
-let offsetY = 0;
+const board = document.getElementById("board");
 
-document.querySelectorAll(".block").forEach(block => {
-  block.addEventListener("mousedown", (e) => {
-    selected = block;
+// Membuat papan 8x8
+for (let i = 0; i < 64; i++) {
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    board.appendChild(cell);
+}
 
-    offsetX = e.clientX - block.offsetLeft;
-    offsetY = e.clientY - block.offsetTop;
-
-    block.style.cursor = "grabbing";
-  });
-});
-
-document.addEventListener("mousemove", (e) => {
-  if (!selected) return;
-
-  selected.style.left = (e.clientX - offsetX) + "px";
-  selected.style.top = (e.clientY - offsetY) + "px";
-});
-
-document.addEventListener("mouseup", () => {
-  if (selected) {
-    selected.style.cursor = "grab";
-    selected = null;
-  }
+const points = document.getElementById("points");
+points.textContent = 0;
+element.addEventListener("click", function () {
+  // gerakan block
 });
